@@ -1,0 +1,32 @@
+<h2>予定リスト</h2>
+
+<%= link_to "新規作成", new_post_path %>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>開始日</th>
+    <th>終了日</th>
+    <th>終日</th>
+    <th>更新日時</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.start_date.strftime("%Y/%m/%d") %></td>
+      <td><%= post.end_date.strftime("%Y/%m/%d") %></td>
+      <td><%= post.all_day ? "〇" : "" %></td>
+      <td><%= post.updated_at.strftime("%Y/%m/%d %H:%M") %></td>
+      <td><%= link_to "詳細", post %></td>
+      <td><%= link_to "編集", edit_post_path(post) %></td>
+      <td><%= link_to "削除", post, data: { turbo_method: :delete, turbo_confirm: "#{post.title}を削除しますか？" } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div>
+  <p>予定件数: <%= @posts.count %>件</p>
+  <p>本日の日付: <%= Date.today.strftime("%Y/%m/%d") %></p>
+</div>

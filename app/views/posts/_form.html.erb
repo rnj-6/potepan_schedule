@@ -1,0 +1,39 @@
+<%= form_with model: @post do |form| %>
+    <% if @post.errors.any? %>
+        <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <div>
+        <%= form.label :title, "タイトル" %>
+        <%= form.text_field :title %>    
+    </div>
+    <div>
+        <%= form.label :start_date, "開始日" %>
+        <%= form.date_field :start_date %>
+    </div>
+    <div>
+        <%= form.label :end_date, "終了日" %>
+        <%= form.date_field :end_date %>
+    </div>
+    <div>
+        <%= form.check_box :all_day %>
+        <%= form.label :all_day, "終日" %>
+    </div>
+    <div>
+        <%= form.label :body, "メモ" %>
+        <%= form.text_area :body %>
+    </div>
+
+    <%# キャンセルボタン %>
+    <%= link_to "キャンセル", posts_path %>
+
+    <%# 保存ボタン %>
+    <%= form.submit "保存" %>
+    
+
+
+<%end%>

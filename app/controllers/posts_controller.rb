@@ -14,8 +14,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save  
-      redirect_to @post, notice: "予定を作成しました"
+    if @post.save 
+      flash[:notice] = "予定を作成しました"
+      redirect_to action: :index
     else   
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +29,8 @@ class PostsController < ApplicationController
   def update  
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post, notice: "予定を編集しました"
+      flash[:notice] = "予定を編集しました"
+      redirect_to action: :index
     else
       render :edit, status: :unprocessable_entity
     end
@@ -37,8 +39,10 @@ class PostsController < ApplicationController
     
   def destroy  
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path, notice: "削除しました", status: :see_other
+    if @post.destroy
+      flash[:notice] = "予定を削除しました"
+      redirect_to action: :index
+    end
   end
 
   private

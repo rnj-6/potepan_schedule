@@ -17,7 +17,8 @@ class PostsController < ApplicationController
     if @post.save 
       flash[:notice] = "予定を作成しました"
       redirect_to action: :index
-    else   
+    else
+      flash.now[:alert] = "予定の作成に失敗しました"
       render :new, status: :unprocessable_entity
     end
   end
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
       flash[:notice] = "予定を編集しました"
       redirect_to action: :index
     else
+      flash.now[:alert] = "予定の編集に失敗しました"
       render :edit, status: :unprocessable_entity
     end
   end

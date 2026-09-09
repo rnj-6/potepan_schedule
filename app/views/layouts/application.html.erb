@@ -22,5 +22,7 @@
       <h1>スケジュール管理アプリ</h1>
     </header>
     <%= yield %>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
   </body>
 </html>

@@ -19,83 +19,72 @@
     color: #fff6f6 ;
 }
 
-.menu_Container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 110px;
-}
-
-h2 {
-    font-size: 17px;
-    font-weight: 800;
-    margin-top: 10px;
-}
-
 a {
     text-decoration: none;
     color: #0f6629;
     font-weight: 550;
 }
 
-/* index */
-.index_Table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: 20px auto;
-    font-size: 14px;
-    background-color: #ffffff;
-    box-shadow: 0px 2px 10px 0px rgba(9, 57, 9, 0.10);
+div {
+    display: block;
 }
 
-.index_Table th, .index_Table td {
-    border: 1px solid #b8d1b8;
-    border-left: none;
-    border-right: none;
-    padding: 15px;
+/* -----------------------------
+   index
+----------------------------- */
+.indexMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.indexMenu h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* テーブル */
+
+.indexTable {
+    background-color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(9, 57, 9, 0.1);
+    font-size: 14px;
+}
+
+.indexTable th {
+    padding: 14px 12px;
+    color: #315c3d;
+    font-weight: 700;
     text-align: left;
 }
 
-.index_Info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 30px 110px;
-    padding: 20px;
-    min-height: 60px;
-    background-color: #ffffff;
-    box-shadow: 0px 2px 10px 0px rgba(9, 57, 9, 0.10);
+.indexTable td {
+    padding: 14px 12px;
+    border-top: 1px solid #e2ebe4fa;
 }
 
-.index_Info p {
+.indexInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 20px;
+    padding: 16px 20px;
+
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(9, 57, 9, 0.1);
+}
+
+.indexInfo p {
     margin: 0;
 }
 
-.post_Count {
+.postCount {
     font-weight: bold;
 }
 
-/* show */
-
-.show_Table {
-    border-collapse: collapse;
-    margin: 20px auto;
-    font-size: 14px;
-    background-color: #ffffff;
-    box-shadow: 0px 2px 10px 0px rgba(9, 57, 9, 0.10);
-}
-
-.show_Table th {
-    border: 1px solid #b8d1b8;
-    width: 110px;
-    padding-left: 15px;
-    text-align: left;
-    background-color: #e0f0e5;
-}
-
-.show_Table td {
-    border: 1px solid #b8d1b8;
-    padding: 15px;
-    width: 700px;
-    text-align: left;
-}

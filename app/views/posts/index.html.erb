@@ -1,11 +1,12 @@
 <div class="container">
 
-  <div class="menu_Container">
+  <div class="indexMenu">
     <h2>予定リスト</h2>
+
     <%= link_to "新規作成", new_post_path, class: "btn btn-outline-success" %>
   </div>
     
-  <table class="index_Table">
+  <table class="indexTable">
     <tr>
       <th>タイトル</th>
       <th>開始日</th>
@@ -32,8 +33,15 @@
     <% end %>
   </table>
     
-  <div class="index_Info">
-    <p>予定件数: <span class="post_Count"><%= @posts.count %></span>件</p>
-    <p>本日の日付: <%= Date.today.strftime("%Y/%m/%d") %></p>
+  <div class="indexInfo">
+    <p>
+      予定件数: 
+      <span class="postCount"><%= @posts.count %></span>件
+    </p>
+
+    <p>
+      本日の日付: 
+      <%= Date.today.strftime("%Y/%m/%d") %>
+    </p>
   </div>
 </div>

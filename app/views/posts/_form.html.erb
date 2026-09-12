@@ -1,39 +1,70 @@
-<%= form_with model: @post do |form| %>
-    <% if @post.errors.any? %>
-        <ul>
-            <% @post.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-        </ul>
+<div class="cardDesign">
+    <%= form_with model: @post do |form| %>
+
+       <div class="inputField">
+            <%= form.label :title, "タイトル" %>
+            <%= form.text_field :title, placeholder: "タイトル" %>
+
+            <p class="errorMessage">
+                <% if @post.errors[:title].any? %>
+                    *タイトル<%= @post.errors[:title].first %>
+                <% end %>
+            </p>
+        </div>
+
+        
+
+        <div class="dateContainer">
+            <div class="inputField">
+                <%= form.label :start_date, "開始日" %>
+                <%= form.date_field :start_date,
+                   min: "1000/01/01",
+                   max: "9999/12/31"
+                %>
+                
+                <p class="errorMessage">
+                    <% if @post.errors[:start_date].any? %>
+                        *開始日<%= @post.errors[:start_date].first %>
+                    <% end %>
+                </p>
+            </div>
+            
+            <div class="inputField">
+                <%= form.label :end_date, "終了日" %>
+                <%= form.date_field :end_date,
+                   min: "1000/01/01",
+                   max: "9999/12/31"
+                %>
+                
+                <p class="errorMessage">
+                    <% if @post.errors[:end_date].any? %>
+                        *終了日<%= @post.errors[:end_date].first %>
+                    <% end %>
+                </p>
+            </div>
+        </div>
+
+        <div class="allDay">
+            <%= form.check_box :all_day %>
+            <%= form.label :all_day, "終日" %>
+        </div>
+
+        <div class="inputField">
+            <div class="memo">
+               <%= form.label :body, "メモ" %>
+               <%= form.text_area :body, placeholder: "メモを入力する" %>
+            </div>
+        </div>
+
+    
+        <div class="btnMenu">
+            <div class="cancelBtn">
+                <%= link_to "キャンセル", posts_path %>
+            </div>
+
+            <%= form.submit "保存", class: "btn btn-outline-success" %>
+        </div>
+
     <% end %>
 
-    <div>
-        <%= form.label :title, "タイトル" %>
-        <%= form.text_field :title %>    
-    </div>
-    <div>
-        <%= form.label :start_date, "開始日" %>
-        <%= form.date_field :start_date %>
-    </div>
-    <div>
-        <%= form.label :end_date, "終了日" %>
-        <%= form.date_field :end_date %>
-    </div>
-    <div>
-        <%= form.check_box :all_day %>
-        <%= form.label :all_day, "終日" %>
-    </div>
-    <div>
-        <%= form.label :body, "メモ" %>
-        <%= form.text_area :body %>
-    </div>
-
-    <%# キャンセルボタン %>
-    <%= link_to "キャンセル", posts_path %>
-
-    <%# 保存ボタン %>
-    <%= form.submit "保存", class: "btn btn-primary" %>
-    
-
-
-<% end %>
+</div>

@@ -21,8 +21,19 @@
     <header class="schedule_App_Header">
       <h1>スケジュール管理アプリ</h1>
     </header>
+
     <%= yield %>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
+
+    <div class="flashMessage">
+      <% if flash[:notice] %>
+        <p class="flashNotice"><%= flash[:notice] %></p>
+      <% end %>
+
+      <% if flash[:alert] %>
+        <p class="flashAlert"><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+
   </body>
+  
 </html>

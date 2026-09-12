@@ -1,13 +1,13 @@
-<div class="show_Menu_Container">
-    <div class="back_Button">
-        <%= link_to "←リストに戻る", posts_path %>
+<div class="showMenu">
+    <div class="backButton">
+        <%= link_to "◀ リストに戻る", posts_path %>
     </div>
     <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>
 </div>
 
-<h2 class="show_Post_Title"><%= @post.title %></h2>
+<h2 class="showPostTitle"><%= @post.title %></h2>
 <div>
-    <table class="show_Table">
+    <table class="showTable">
         <tr>
             <th>開始日</th>
             <td><%= @post.start_date.strftime("%Y/%m/%d") %></td>

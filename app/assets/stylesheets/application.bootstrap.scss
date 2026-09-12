@@ -17,6 +17,7 @@
 .schedule_App_Header h1 {
     font-size: 20px;
     color: #fff6f6 ;
+    margin: 0;
 }
 
 a {
@@ -73,7 +74,7 @@ div {
     justify-content: space-between;
     align-items: center;
 
-    margin-top: 20px;
+    margin-top: 35px;
     padding: 16px 20px;
 
     background: #ffffff;
@@ -85,6 +86,56 @@ div {
 }
 
 .postCount {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 20px;
 }
 
+/* -----------------------------
+   show
+----------------------------- */
+
+.showMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 20px 300px;
+}
+
+.backButton {
+    font-size: 14px;
+}
+
+.showPostTitle {
+    margin-left: 300px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.showTable {
+    border-collapse: collapse;
+    width: calc( 100% - 600px );
+    margin: 20px auto;
+    font-size: 14px;
+
+    box-shadow: 0 2px 10px rgba(9, 57, 9, 0.1);
+}
+
+.showTable th {
+    padding: 17px 12px;
+    color: #315c3d;
+    font-weight: 700;
+    text-align: left;
+
+    border-bottom: 1px solid #e2ebe4fa;
+    background-color: #f8fffa;
+}
+
+.showTable td {
+    padding: 17px 12px;
+
+    border-bottom: 1px solid #e2ebe4fa;
+    border-left: 1px solid #e2ebe4fa;
+    background: #ffffff;
+}
